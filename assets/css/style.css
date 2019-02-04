@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background-image:url(../images/background.jpg);
+    color: red;
+    font-size: 200%;
+    font-weight: 900%;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 300%;
+    color: red;
+    font-weight: 900%;
+}
