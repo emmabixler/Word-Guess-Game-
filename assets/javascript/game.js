@@ -28,7 +28,8 @@ document.onkeyup = function(event) {
       wins++;
       numLeft = 9;
       guessChoices = [];
-      document.getElementById("wons").innerHTML = wins;
+      document.getElementById("won").innerHTML = wins;
+
 
     } else {
      document.getElementById("lost").innerHTML = losses; 
@@ -38,8 +39,6 @@ document.onkeyup = function(event) {
       numLeft = 9;
       losses++;
       guessChoices = [];
-      document.getElementById("guessesLeft").innerHTML = attempts;
-
     }
   }
 };
