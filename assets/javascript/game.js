@@ -6,9 +6,17 @@ var numLeft = 9;
 var guessChoices = [];
 var userGuess= null;
 
+console.log(document)
+
 document.onkeyup = function(event) {
-  
+    
+    numLeft--;
+    
     var userGuess = event.key;
+
+    guessChoices.push(userGuess);
+
+    document.getElementById("guessChoices").innerHTML = guessChoices;
 
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -20,26 +28,20 @@ document.onkeyup = function(event) {
       wins++;
       numLeft = 9;
       guessChoices = [];
+      document.getElementById("wons").innerHTML = wins;
 
     } else {
-      
-        if (computerChoices.includes(userGuess)) {
-     
-    } else {
-        numLeft--;
-        guessChoices.push(userGuess);
-      }
+     document.getElementById("lost").innerHTML = losses; 
     }
-    
+
     if (numLeft === 0) {
       numLeft = 9;
       losses++;
       guessChoices = [];
+      document.getElementById("guessesLeft").innerHTML = attempts;
+
     }
   }
 };
 
-document.getElementById('won').innerHTML = won;
-document.getElementById('lost').innerHTML = lost;
-document.getElementById('attempts').innerHTML = attempts;
 
