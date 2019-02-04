@@ -6,21 +6,17 @@ var numLeft = 9;
 var guessChoices = [];
 var userGuess= null;
 
-console.log(document)
-
 document.onkeyup = function(event) {
     
-    numLeft--;
-    
-    var userGuess = event.key;
+  numLeft--;
+  document.getElementById("attempts").innerHTML = numLeft;    
+  
+  var userGuess = event.key;
+  guessChoices.push(userGuess);
+  document.getElementById("guessChoices").innerHTML = guessChoices;
 
-    guessChoices.push(userGuess);
-
-    document.getElementById("guessChoices").innerHTML = guessChoices;
-
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-    var options = ["a","b","c", "d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y", "z"];
+  var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+  var options = ["a","b","c", "d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y", "z"];
 
   if (options.indexOf(userGuess) > -1) {
    
@@ -42,5 +38,8 @@ document.onkeyup = function(event) {
     }
   }
 };
+document.addEventListener("DOMContentLoaded",function (){
+  document.getElementById("attempts").innerHTML=numLeft;
+});
 
 
